@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>According</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        box-sizing: border-box;
+        padding: 0;
+    }
+    body{
+        margin: 0;
+        padding: 0;
+    }
+    .accroding{
+        width: 650px;
+        margin: 20px auto;
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+    }
+    .item{
+        display: grid;
+        grid-template-columns: 20px 1fr 20px;
+        box-shadow: 0 0 15px gray;
+        padding: 15px;
+        gap: 15px;
+    }
+    .num, .title , .icon {
+        font-size: 24px;
+        color: rgb(182, 182, 182);
+    }
+    .hide-box{
+        grid-column: 2;
+        display: none;
+    }
+    .open{
+        border-top: 3px solid brown;
+        border-bottom: 1px solid grey;
+    }
+    .open .hide-box{
+        display: inline;
+    }
+    .open .num,.open .title,.open .icon{
+        color: brown;
+    }
+    .open svg{
+        rotate: 180deg;
+    }
+
+</style>
+<body>
+    <div class="accroding">
+        <div class="item open">
+            <p class="num">01</p>
+            <p class="title">level 1</p>
+            <p class="icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path fill="currentColor" d="m7 10l5 5l5-5H7z"/></svg>
+
+            </p>
+            <div class="hide-box">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit omnis expedita laboriosam deserunt, voluptatem asperiores laborum fugiat sequi pariatur quaerat eveniet, nisi exercitationem praesentium natus fuga aut accusamus esse repellat?</p>
+
+            </div>
+        
+        </div>
+        <div class="item">
+            <p class="num">02</p>
+            <p class="title">level 2</p>
+            <p class="icon" >
+            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path fill="currentColor" d="m7 10l5 5l5-5H7z"/></svg>
+
+            </p>
+            <div class="hide-box">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit omnis expedita laboriosam deserunt, voluptatem asperiores laborum fugiat sequi pariatur quaerat eveniet, nisi exercitationem praesentium natus fuga aut accusamus esse repellat?</p>
+
+            </div>
+        
+        </div>
+        <div class="item">
+            <p class="num">03</p>
+            <p class="title">level 3</p>
+            <p class="icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path fill="currentColor" d="m7 10l5 5l5-5H7z"/></svg>    
+            </p>
+            <div class="hide-box">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit omnis expedita laboriosam deserunt, voluptatem asperiores laborum fugiat sequi pariatur quaerat eveniet, nisi exercitationem praesentium natus fuga aut accusamus esse repellat?</p>
+
+            </div>
+        
+        </div>
+    </div>
+  
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+    <script>
+        let par =  $(".accroding");
+                par.find(".open").removeClass("open") 
+       
+            $(".icon").click( (e)=>{
+                let par =  $(".accroding");
+                par.find(".open").removeClass("open") 
+                
+                $(e.currentTarget.parentElement).toggleClass("open")
+                
+        })
+    
+    </script>
+</body>
+</html>
